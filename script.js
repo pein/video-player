@@ -8,7 +8,7 @@ const volumeBar = document.querySelector(".volume-bar");
 const currentTime = document.querySelector(".time-elapsed");
 const duration = document.querySelector(".time-duration");
 const fullScreenBn = document.querySelector(".fullscreen");
-
+const speed = document.querySelector(".player-speed");
 // Play & Pause ----------------------------------- //
 function showPlayIcon() {
   playBtn.classList.replace("fa-pause", "fa-play");
@@ -94,7 +94,9 @@ function toggleMute() {
   }
 }
 // Change Playback Speed -------------------- //
-
+function changeSpeed() {
+  video.playbackRate = speed.value;
+}
 // Fullscreen ------------------------------- //
 
 // Event Listners
@@ -105,5 +107,6 @@ video.addEventListener("canplay", updateProgress);
 progressRange.addEventListener("click", setProgress);
 volumeRange.addEventListener("click", changeVolume);
 volumeIcon.addEventListener("click", toggleMute);
+speed.addEventListener("change", changeSpeed);
 // On video end
 video.addEventListener("ended", showPlayIcon);
