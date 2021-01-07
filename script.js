@@ -147,5 +147,7 @@ volumeRange.addEventListener("click", changeVolume);
 volumeIcon.addEventListener("click", toggleMute);
 speed.addEventListener("change", changeSpeed);
 fullScreenBtn.addEventListener("click", toggleFullscreen);
+video.addEventListener("dblclick", toggleFullscreen);
+
 // On video end
 video.addEventListener("ended", showPlayIcon);
